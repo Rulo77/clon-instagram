@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="max-w-96 m-auto text-center mt-4">
+  <div >
+    <img [src]="user.photoUrl" alt="Foto de perfil" class="w-52 h-52 rounded-full">
+    <h2 class="mt-4 text-5xl truncate">{{ user.name }}</h2>
+    <p class="text-2xl">{{ user.email }}</p>
+  </div>
+  <div >
+    <p class="text-gray-500 text-xl">Amigos: {{ user.friendsCount }}</p>
+  </div>
+</div>
+

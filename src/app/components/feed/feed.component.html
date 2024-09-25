@@ -1,0 +1,36 @@
+
+<app-navbar></app-navbar>
+<div class="flex justify-between min-h-svh">
+  <aside class="w-96 bg-red-200">
+
+  </aside>
+  <div class="flex-auto">
+    <h1 class="text-3xl font-bold text-center">Feed de Publicaciones</h1>
+    <!-- Mostrar spinner mientras se cargan los posts -->
+    <div *ngIf="loading" class="flex justify-center my-8">
+      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+    </div>
+    <!--
+      <div *ngIf="errorMessage" class="text-red-600 bg-red-100 p-4 mb-4">
+        {{ errorMessage }}
+      </div> -->
+
+    <div class="min-w-6xl">
+      <div *ngFor="let post of posts" class=" bg-white shadow-md rounded-lg p-6 m-4 border border-black min-h-64">
+        <img class="rounded-full w-10 m-3"
+          src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" />
+        <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
+        <p class="text-gray-700">{{ post.body }}</p>
+      </div>
+    </div>
+
+    <!-- Si no hay posts (o en caso de error), mostrar un mensaje -->
+    <div *ngIf="(posts$ | async)?.length === 0 && !errorMessage" class="text-gray-500">
+      No hay publicaciones disponibles en este momento.
+    </div>
+  </div>
+
+
+  <aside class="bg-slate-700 w-60"></aside>
+</div>
+

@@ -1,0 +1,20 @@
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-header h2 {
+  margin: 10px 0;
+}
+
+.profile-details p {
+  font-size: 18px;
+  color: gray;
+}
